@@ -5,6 +5,11 @@ class Pub:
         self.drinks_stock = []
         self.age_check = 18
         self.drunk_refusal = 10
+        self.stock = [
+            {"name" : "Beer", "price" : 3.00, "alcohol_level" : 5},
+            {"name" : "Purple Rain", "price" : 8.00, "alcohol_level" : 8},
+            {"name" : "Cider", "price" : 3.00, "alcohol_level" : 3},
+        ]
 
     def increase_till(self, amount):
         self.till += amount
