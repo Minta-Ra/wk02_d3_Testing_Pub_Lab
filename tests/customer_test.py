@@ -10,4 +10,4 @@ class TestCustomer(unittest.TestCase):
     def test_customer_has_wallet(self):
         self.assertEqual(50.00, self.customer.wallet)
 
-   
+    

@@ -2,6 +2,7 @@ import unittest
 from src.pub import Pub
 from src.customer import Customer
 from src.drinks import Drink
+from src.food import Food
 
 # Inherit from unittest
 class TestPub(unittest.TestCase):
@@ -12,6 +13,8 @@ class TestPub(unittest.TestCase):
         self.drink = Drink("Beer", 3.00, 5)
         self.customer = Customer("John Doe", 25.00, 24)
         self.customer2 = Customer("Hurbert Bridges", 5.00, 17)
+        self.chips = Food("Chips", 2.00, 4)
+        self.salad = Food("Salad", 2.50, 1)
 
     # Test if pub has a name - property
     def test_pub_has_name(self):
@@ -34,7 +37,7 @@ class TestPub(unittest.TestCase):
 
 
     def test_add_drink_to_pub_stock(self):
-        drink = Drink("Beer", 2.99)
+        drink = Drink("Beer", 2.99, 3)
         self.pub.add_drink_to_pub_stock(drink)
         self.assertEqual([drink], self.pub.drinks_stock)
 
@@ -57,4 +60,6 @@ class TestPub(unittest.TestCase):
         self.assertEqual(True, self.pub.check_customer_age(self.customer.age))
         self.assertEqual(False, self.pub.check_customer_age(self.customer2.age))
         
-    
+    def test_check_drunkenness(self):
+        drunk = self.customer.add_drunkenness(self.drink.alcohol_level)
+        self.assertEqual(True, self.pub.check_customer_drunkenness(drunk))

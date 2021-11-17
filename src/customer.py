@@ -4,7 +4,7 @@ class Customer:
         self.wallet = wallet
         self.customer_drink = []
         self.age = age
-        drunkenness = 0
+        self.drunkenness = 0
 
     def add_customer_drink(self, drink):
         self.customer_drink.append(drink)
@@ -12,5 +12,6 @@ class Customer:
     def deduct_from_wallet(self, amount):
         self.wallet -= amount
         
-    def add_drunkenness(self):
-        pass
+    def add_drunkenness(self, drink):
+        self.drunkenness += drink
+        return self.drunkenness

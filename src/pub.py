@@ -4,6 +4,7 @@ class Pub:
         self.till = till 
         self.drinks_stock = []
         self.age_check = 18
+        self.drunk_refusal = 10
 
     def increase_till(self, amount):
         self.till += amount
@@ -16,3 +17,7 @@ class Pub:
             return True
         else:
             return False
+        
+    def check_customer_drunkenness(self, drunk):
+        while drunk < self.drunk_refusal:
+            return True
