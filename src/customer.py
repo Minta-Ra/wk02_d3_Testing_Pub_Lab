@@ -13,5 +13,9 @@ class Customer:
         self.wallet -= amount
         
     def add_drunkenness(self, drink):
-        self.drunkenness += drink
+        self.drunkenness += drink.alcohol_level
+        return self.drunkenness
+    
+    def deduct_drunkenness(self, food):
+        self.drunkenness -= food.rejuv_level
         return self.drunkenness

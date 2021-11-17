@@ -11,6 +11,7 @@ class TestPub(unittest.TestCase):
         # instance with new Pub object
         self.pub = Pub("The Prancing Pony", 100.00)
         self.drink = Drink("Beer", 3.00, 5)
+        self.drink2 = Drink("Purple Rain", 8.00, 6)
         self.customer = Customer("John Doe", 25.00, 24)
         self.customer2 = Customer("Hurbert Bridges", 5.00, 17)
         self.chips = Food("Chips", 2.00, 4)
@@ -57,9 +58,17 @@ class TestPub(unittest.TestCase):
 
     def test_customer_age(self):
         # self.pub.check_customer_age(self.customer.age)
-        self.assertEqual(True, self.pub.check_customer_age(self.customer.age))
-        self.assertEqual(False, self.pub.check_customer_age(self.customer2.age))
+        self.assertEqual(True, self.pub.check_customer_age(self.customer))
+        self.assertEqual(False, self.pub.check_customer_age(self.customer2))
         
     def test_check_drunkenness(self):
-        drunk = self.customer.add_drunkenness(self.drink.alcohol_level)
+        drunk = self.customer.add_drunkenness(self.drink)
         self.assertEqual(True, self.pub.check_customer_drunkenness(drunk))
+        
+    def test_customer_bought_food(self):
+        # self.pub.add_drink_to_pub_stock(self.drink)
+        # self.customer.add_customer_drink(self.pub.drinks_stock)
+        # self.pub.drinks_stock.clear()
+        # self.pub.increase_till(self.drink.price)
+        # self.customer.deduct_from_wallet(self.drink.price)
+        pass

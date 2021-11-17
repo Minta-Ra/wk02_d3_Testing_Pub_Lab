@@ -13,7 +13,7 @@ class Pub:
         self.drinks_stock.append(drink)
 
     def check_customer_age(self, age):
-        if age >= self.age_check:
+        if age.age >= self.age_check:
             return True
         else:
             return False
