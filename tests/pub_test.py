@@ -9,8 +9,9 @@ class TestPub(unittest.TestCase):
     def setUp(self):
         # instance with new Pub object
         self.pub = Pub("The Prancing Pony", 100.00)
-        self.drink = Drink("Beer", 3.00)
-        self.customer = Customer("John Doe", 25.00)
+        self.drink = Drink("Beer", 3.00, 5)
+        self.customer = Customer("John Doe", 25.00, 24)
+        self.customer2 = Customer("Hurbert Bridges", 5.00, 17)
 
     # Test if pub has a name - property
     def test_pub_has_name(self):
@@ -51,7 +52,9 @@ class TestPub(unittest.TestCase):
         self.assertEqual(22.00, self.customer.wallet)
         self.assertEqual(103.00, self.pub.till)
 
-
-
-
+    def test_customer_age(self):
+        # self.pub.check_customer_age(self.customer.age)
+        self.assertEqual(True, self.pub.check_customer_age(self.customer.age))
+        self.assertEqual(False, self.pub.check_customer_age(self.customer2.age))
+        
     
