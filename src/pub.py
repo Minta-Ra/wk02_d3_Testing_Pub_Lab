@@ -26,3 +26,10 @@ class Pub:
     def check_customer_drunkenness(self, drunk):
         while drunk < self.drunk_refusal:
             return True
+
+    def sell_to_customer(self, customer, drink):
+        self.increase_till(drink.price)
+        customer.wallet -= drink.price
+
+    def serve_food(self, customer, food):
+        customer.drunkenness -= food.rejuv_level
