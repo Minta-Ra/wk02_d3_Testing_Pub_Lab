@@ -56,7 +56,6 @@ class TestPub(unittest.TestCase):
         self.assertEqual(True, self.pub.check_customer_drunkenness(drunk))
         
     def test_customer_bought_food(self):
-
         self.customer.drunkenness = 11
         self.pub.serve_food(self.customer, self.chips)
         self.assertEqual(7, self.customer.drunkenness)
